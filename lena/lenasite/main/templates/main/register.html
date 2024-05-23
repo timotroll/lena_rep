@@ -1,0 +1,26 @@
+{% extends 'main/layout.html'%}
+{% block content %}
+    <div class="wrapper">
+        <form method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+            <h1>Регистрация</h1>
+            <div class="input-box">
+                <label for="id_username">Имя пользователя:</label>
+                <input type="text" name="username" id="id_username" required>
+            </div>
+            <div class="input-box">
+                <label for="id_email">Электронная почта:</label>
+                <input type="email" name="email" id="id_email" required>
+            </div>
+            <div class="input-box">
+                <label for="id_password1">Пароль:</label>
+                <input type="password" name="password1" id="id_password1" required>
+            </div>
+            <div class="input-box">
+                <label for="id_password2">Подтверждение пароля:</label>
+                <input type="password" name="password2" id="id_password2" required>
+            </div>
+            <button type="submit" class="btn btn-info">Зарегистрироваться</button>
+        </form>
+    </div>
+{% endblock %}
